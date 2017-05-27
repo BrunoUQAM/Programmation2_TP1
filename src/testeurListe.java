@@ -6,11 +6,9 @@
 public class testeurListe {
 
     public static void main(String [] arg) {
-
-        test1();
+        //test1();
         test2();
-        test3();
-
+        //test3();
     }
 
     private static void test1() {
@@ -55,11 +53,13 @@ public class testeurListe {
         liste.ajouter(e4_2);
         liste.ajouter(e8);
 
-        liste.supprimerElement(e3);
-        liste.supprimerElement(e6);
+        //liste.supprimerElement(e3);
+        //liste.supprimerElement(e6);
 
-        liste.supprimerGroupe(7);
-        liste.supprimerGroupe(12);
+        //liste.supprimerGroupe(7);
+        //liste.supprimerGroupe(12);
+
+        liste.transferer(3, 7);
     }
 
     private static void test3() {

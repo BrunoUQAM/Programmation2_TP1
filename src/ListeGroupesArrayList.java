@@ -78,7 +78,7 @@ public class ListeGroupesArrayList<T extends IGroupe> implements IListeGroupes<T
      */
     @Override
     public int supprimerGroupe(int idGroupe) {
-        
+
         if (groupeExiste(idGroupe)) {
             final int positionGroupe = trouveGroupeIndex(idGroupe);
             int nbGroupElement = getElements().get(positionGroupe).size();
@@ -301,6 +301,8 @@ public class ListeGroupesArrayList<T extends IGroupe> implements IListeGroupes<T
     @Override
     public int transferer(int idGroupe1, int idGroupe2) {
 
+        // TODO : not working like this
+
         if (groupeExiste(idGroupe1) && groupeExiste(idGroupe2)) {
             final int posGroup1 = trouveGroupeIndex(idGroupe1);
             final int posGroup2 = trouveGroupeIndex(idGroupe2);
@@ -313,6 +315,8 @@ public class ListeGroupesArrayList<T extends IGroupe> implements IListeGroupes<T
                     }
                 }
             }
+
+            getElements().remove(posGroup2);
         }
 
         return 0;
@@ -349,6 +353,19 @@ public class ListeGroupesArrayList<T extends IGroupe> implements IListeGroupes<T
     }
 
     // Méthodes ajoutés qui ne font pas parties de l'interface ===============================================================
+
+    private boolean elementExistDansGroup(int idGroup, T element) {
+
+        if (groupeExiste(idGroup)) {
+            for (T groupe : this.elements.get(trouveGroupeIndex(idGroup))) {
+                if (groupe.equals(element)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 
     /**
      * Recherche de l'index du groupe dans la liste
