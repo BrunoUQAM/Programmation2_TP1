@@ -7,10 +7,10 @@ public class testeurListe {
 
     public static void main(String [] arg) {
         test1();
-        //test2();
-        //test3();
-        //testTransfert();
-        //testRemplacer();
+        test2();
+        test3();
+        testTransfert();
+        testRemplacer();
     }
 
     private static void test1() {
